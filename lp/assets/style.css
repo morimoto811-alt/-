@@ -151,6 +151,11 @@ a:visited {
   line-height: 1.15;
 }
 
+.brand-institute .brand-name {
+  font-size: 1.12rem;
+  line-height: 1.35;
+}
+
 .brand-sub {
   display: block;
   font-size: 1rem;
