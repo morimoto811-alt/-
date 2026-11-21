@@ -405,8 +405,15 @@ h2 {
   padding: 1.1rem 1.05rem 1.15rem;
 }
 
-.gift h2 {
+.gift h2,
+.gift h3 {
   border-bottom-color: var(--forest);
+}
+
+.gift h3 {
+  margin: 0.8rem 0 0.45rem;
+  font-size: 1.25rem;
+  line-height: 1.4;
 }
 
 .gift-row {
@@ -563,7 +570,151 @@ h2 {
 }
 
 body.has-form {
-  --sticky-space: 10.5rem;
+  --sticky-space: 7.6rem;
+}
+
+body.page-lp .site-header {
+  padding: 0.4rem 0 0.45rem;
+}
+
+body.page-lp .header-inner {
+  gap: 0.35rem;
+}
+
+body.page-lp .brand-mark {
+  width: 2.15rem;
+  height: 2.15rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+}
+
+body.page-lp .brand-name,
+body.page-lp .brand-institute .brand-name {
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+body.page-lp .brand-sub {
+  font-size: 0.95rem;
+}
+
+body.page-lp .nav-list {
+  flex-wrap: wrap;
+  gap: 0.35rem 0.7rem;
+}
+
+body.page-lp .nav-list a,
+body.page-lp .nav-list [aria-current="page"] {
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+body.page-lp main {
+  padding-top: 0.7rem;
+}
+
+body.page-lp .hero .kicker {
+  margin-bottom: 0.35rem;
+}
+
+body.page-lp .hero h1 {
+  font-size: clamp(1.55rem, 6.6vw, 2.15rem);
+}
+
+body.page-lp .hero .questions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem 0.5rem;
+  font-size: clamp(1.4rem, 6.3vw, 1.9rem);
+  line-height: 1.25;
+}
+
+body.page-lp .hero .lead {
+  margin-top: 0.4rem;
+  font-size: 1.08rem;
+  line-height: 1.55;
+}
+
+body.page-lp .hero .cta-actions {
+  margin-top: 0.6rem;
+  gap: 0.45rem;
+}
+
+body.page-lp .hero .call-btn,
+body.page-lp .hero .form-btn {
+  min-height: 3.35rem;
+  padding: 0.45rem 0.75rem;
+}
+
+body.page-lp .hero .call-btn-number {
+  font-size: 1.35rem;
+}
+
+body.page-lp .sticky-call a:not(.form-btn),
+body.page-lp .sticky-call .form-btn {
+  min-height: 3.15rem;
+}
+
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: step;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+}
+
+.steps li {
+  position: relative;
+  counter-increment: step;
+  padding: 0.85rem 1rem 0.85rem 3.1rem;
+  border-bottom: 1px solid var(--line);
+  font-size: 1.12rem;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.steps li:last-child {
+  border-bottom: 0;
+}
+
+.steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0.75rem;
+  top: 0.85rem;
+  width: 1.7rem;
+  height: 1.7rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--forest);
+  color: var(--cream);
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.faq {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.faq article {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 0.85rem 1rem 1rem;
+}
+
+.faq h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.45;
+}
+
+.faq p {
+  margin-top: 0.35rem;
 }
 
 .doors {
@@ -703,6 +854,11 @@ body.has-form {
   body.has-form .cta-actions {
     grid-template-columns: 1fr 1fr;
     align-items: stretch;
+  }
+
+  body.page-lp .nav-list {
+    overflow: visible;
+    flex-wrap: wrap;
   }
 }
 
