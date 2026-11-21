@@ -573,6 +573,19 @@ body.has-form {
   --sticky-space: 7.6rem;
 }
 
+body.page-lp.has-form {
+  --sticky-space: 0.75rem;
+}
+
+body.page-lp.sticky-on {
+  --sticky-space: 4.75rem;
+}
+
+body.page-lp .brand-company .brand-sub {
+  font-size: 0.8125rem;
+  line-height: 1.3;
+}
+
 body.page-lp .site-header {
   padding: 0.4rem 0 0.45rem;
 }
@@ -650,9 +663,63 @@ body.page-lp .hero .call-btn-number {
   font-size: 1.35rem;
 }
 
+body.page-lp .sticky-call {
+  grid-template-columns: 1fr;
+  align-items: stretch;
+  height: calc(64px + env(safe-area-inset-bottom, 0px));
+  padding: 6px 8px calc(6px + env(safe-area-inset-bottom, 0px));
+  gap: 8px;
+  box-shadow: 0 -4px 16px rgba(26, 22, 18, 0.18);
+  transform: translateY(110%);
+  visibility: hidden;
+  pointer-events: none;
+}
+
+body.page-lp .sticky-call.is-visible {
+  transform: none;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+body.page-lp.has-form .sticky-call {
+  grid-template-columns: 1.25fr 1fr;
+}
+
 body.page-lp .sticky-call a:not(.form-btn),
 body.page-lp .sticky-call .form-btn {
-  min-height: 3.15rem;
+  min-height: 0;
+  height: 52px;
+  margin: 0;
+  padding: 0.15rem 0.45rem;
+  font-size: 1rem;
+  line-height: 1.15;
+}
+
+body.page-lp .sticky-call .sticky-kicker {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+body.page-lp .sticky-num {
+  font-size: 1.05rem;
+}
+
+body.page-lp .sticky-call .phone-icon {
+  width: 22px;
+  height: 22px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.page-lp .sticky-call {
+    transition: none;
+  }
 }
 
 .steps {
