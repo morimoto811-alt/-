@@ -472,12 +472,12 @@ h2 {
 }
 
 .call-btn:visited,
-.sticky-call a:visited {
+.sticky-call a:not(.form-btn):visited {
   color: var(--cream);
 }
 
 .call-btn:hover,
-.sticky-call a:hover {
+.sticky-call a:not(.form-btn):hover {
   background: var(--brick-deep);
 }
 
@@ -508,6 +508,62 @@ h2 {
 
 .phone-icon {
   flex: none;
+}
+
+.cta-actions {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 0.85rem;
+}
+
+.cta-actions .call-btn {
+  margin-top: 0;
+}
+
+.form-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 4.8rem;
+  padding: 0.75rem 1rem;
+  border: 3px solid var(--forest);
+  border-radius: 14px;
+  background: var(--card);
+  color: var(--forest);
+  font-size: 1.2rem;
+  font-weight: 800;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+}
+
+.form-btn:visited {
+  color: var(--forest);
+}
+
+.form-btn:hover {
+  background: var(--forest-soft);
+}
+
+.form-btn[hidden] {
+  display: none !important;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+body.has-form {
+  --sticky-space: 10.5rem;
 }
 
 .doors {
@@ -602,12 +658,14 @@ h2 {
   right: 0;
   bottom: 0;
   z-index: 30;
+  display: grid;
+  gap: 0.45rem;
   background: var(--brick-deep);
   padding: 0.45rem 0.65rem calc(0.45rem + env(safe-area-inset-bottom, 0px));
   box-shadow: 0 -8px 22px rgba(26, 22, 18, 0.22);
 }
 
-.sticky-call a {
+.sticky-call a:not(.form-btn) {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -618,6 +676,12 @@ h2 {
   background: var(--brick);
   color: var(--cream);
   text-decoration: none;
+}
+
+.sticky-call .form-btn {
+  min-height: 3.2rem;
+  background: var(--cream);
+  color: var(--forest);
 }
 
 .sticky-num {
@@ -634,6 +698,11 @@ h2 {
   .nav-list {
     justify-content: flex-end;
     max-width: 28rem;
+  }
+
+  body.has-form .cta-actions {
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
   }
 }
 
